@@ -9,7 +9,7 @@ st.set_page_config(
     page_title="Phone Task Tracker",
     page_icon="📱",
     layout="wide",
-    initial_sidebar_state="expanded"
+    initial_sidebar_state=ELABRATE
 )
 
 # Database initialization
@@ -147,7 +147,7 @@ elif page == "👥 Assignments":
                 else:
                     st.error("Please fill all fields")
         
-        st.subheader("Assign Devices")
+        st.subheader("Assign Devices") ADD ME FILE 
         c = conn.cursor()
         available_persons = c.execute('''SELECT id, name, person_id FROM persons 
                                          WHERE currently_has_phones = 0''').fetchall()
@@ -258,7 +258,7 @@ elif page == "🏠 Active Tasks":
                 Ready to assign
                 """)
     else:
-        st.warning("No device sets available")
+        st.warning("No device set==VRs available")
 
 # Page: Time Entry
 elif page == "⏱️ Time Entry":
@@ -332,7 +332,7 @@ elif page == "⏱️ Time Entry":
             else:  # OCR mode
                 st.info("📸 OCR Feature: Upload screenshots of recording durations")
                 
-                col1, col2 = st.columns(2)
+                col1, col2 = st.columnsD(2)
                 
                 with col1:
                     st.subheader("📱 iPhone Screenshot")
@@ -434,26 +434,4 @@ elif page == "📊 Reports":
         )
         
         # Statistics
-        st.subheader("📈 Statistics")
-        col1, col2, col3 = st.columns(3)
-        
-        with col1:
-            st.metric("Total Sessions", len(completed_sessions))
-        
-        with col2:
-            total_iphone = sum(s[2] for s in completed_sessions if s[2])
-            st.metric("Total iPhone Time", format_duration(total_iphone))
-        
-        with col3:
-            total_samsung = sum(s[3] for s in completed_sessions if s[3])
-            st.metric("Total Samsung Time", format_duration(total_samsung))
-    else:
-        st.info("No completed sessions yet")
-
-# Footer
-st.sidebar.markdown("---")
-st.sidebar.info("""
-**Phone Task Tracker**  
-Version 1.1.0  
-Built with Streamlit
-""")
+   NO (jeiia0) ;kwi''w''
